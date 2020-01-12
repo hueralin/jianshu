@@ -1,6 +1,6 @@
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
-injectGlobal`
+export const GlobalStyled = createGlobalStyle`
     /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
     License: none (public domain)
@@ -49,4 +49,4 @@ injectGlobal`
     border-collapse: collapse;
     border-spacing: 0;
     }
-`
+`;

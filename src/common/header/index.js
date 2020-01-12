@@ -6,7 +6,8 @@ import {
     NavItem,
     NavSearch,
     Addition,
-    Button
+    Button,
+    SearchWrapper
  } from './style.js'
 
 export default class Header extends Component {
@@ -18,11 +19,16 @@ export default class Header extends Component {
                     <NavItem className='left active'>首页</NavItem>
                     <NavItem className='left'>下载App</NavItem>
                     <NavItem className='right'>登录</NavItem>
-                    <NavItem className='right'>Aa</NavItem>
-                    <NavSearch />
+                    <NavItem className='right'>
+                        <i className='iconfont iconAa'></i>
+                    </NavItem>
+                    <SearchWrapper>
+                        <NavSearch />
+                        <i className='iconfont iconfangdajing'></i>
+                    </SearchWrapper>
                 </Nav>
                 <Addition>
-                    <Button className='writing'>写文章</Button>
+                    <Button className='writing'><i className='iconfont iconyumaobi'></i>写文章</Button>
                     <Button className='reg'>注册</Button>
                 </Addition>
             </HeaderWrapper>

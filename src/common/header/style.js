@@ -51,16 +51,33 @@ export const NavItem = styled.div`
 export const SearchWrapper = styled.div`
     float: left;
     position: relative;
+    .slide-enter {
+        width: 160px;
+        transition: all 0.2s ease-out;
+    }
+    .slide-enter-active {
+        width: 240px;
+    }
+    .slide-exit {
+        width: 240px;
+        transition: all 0.2s ease-out;
+    }
+    .slide-exit-active {
+        width: 160px;
+    }
     .iconfangdajing {
         position: absolute;
-        right: 10px;
+        right: 5px;
         bottom: 4px;
         line-height: 30px;
-        // background: #aaa;
         width: 30px;
         height: 30px;
         border-radius: 15px;
         text-align: center;
+        &.focused {
+            color: #fff;
+            background: #999;
+        }
     }
 `
 
@@ -75,11 +92,15 @@ export const NavSearch = styled.input.attrs({
     border-radius: 19px;
     margin-top: 9px;
     margin-left: 20px;
-    padding: 0 20px;
+    padding: 0 35px 0 20px;
     box-sizing: border-box;
     background: #eee;
+    color: #666;
     &::placeholder {
         color: #999;
+    }
+    &.focused {
+        width: 240px;
     }
 `;
 

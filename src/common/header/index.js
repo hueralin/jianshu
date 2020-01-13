@@ -10,8 +10,37 @@ import {
     NavSearch,
     Addition,
     Button,
-    SearchWrapper
+    SearchWrapper,
+    HotSearch,
+    HotSearchTitle,
+    HotSearchSwitch,
+    HotSearchList,
+    HotSearchItem
  } from './style.js'
+
+ // 这个操作（想法）真棒！
+ const getHotSearchList = (show) => {
+    if(show) {
+        return (
+            <HotSearch>
+                <HotSearchTitle>
+                    热门搜索
+                    <HotSearchSwitch>换一批</HotSearchSwitch>
+                </HotSearchTitle>
+                <HotSearchList>
+                    <HotSearchItem>教育</HotSearchItem>
+                    <HotSearchItem>教育</HotSearchItem>
+                    <HotSearchItem>教育</HotSearchItem>
+                    <HotSearchItem>教育</HotSearchItem>
+                    <HotSearchItem>教育</HotSearchItem>
+                    <HotSearchItem>教育</HotSearchItem>
+                </HotSearchList>
+            </HotSearch>
+        )
+    } else {
+        return null
+    }
+ }
 
 const Header = (props) => {
     const { focused, handleFocus, handleBlur } = props
@@ -30,6 +59,7 @@ const Header = (props) => {
                         <NavSearch onFocus={handleFocus} onBlur={handleBlur} className={focused ? 'focused' : ''} />
                     </CSSTransition>
                     <i className={focused ? 'focused iconfont iconfangdajing' : 'iconfont iconfangdajing'}></i>
+                    { getHotSearchList(focused) }
                 </SearchWrapper>
             </Nav>
             <Addition>

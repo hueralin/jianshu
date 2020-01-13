@@ -104,6 +104,57 @@ export const NavSearch = styled.input.attrs({
     }
 `;
 
+export const HotSearch = styled.div`
+    position: absolute;
+    top: 58px;
+    width: 240px;
+    box-sizing: border-box;
+    margin-left: 20px;
+    padding: 0 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: -19px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent #fff transparent;
+    }
+`;
+
+export const HotSearchTitle = styled.div`
+    color: #969696;
+    line-height: 20px;
+    font-szie: 14px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+`;
+
+export const HotSearchSwitch = styled.div`
+    color: #969696;
+    float: right;
+    font-szie: 13px;
+`;
+
+export const HotSearchList = styled.div`
+    // overflow: hidden;
+`;
+
+export const HotSearchItem = styled.a`
+    float: left;
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    color: #787878;
+    border-radius: 3px;
+    cursor: pointer;
+`;
+
 export const Addition = styled.div`
     position: absolute;
     top: 0;

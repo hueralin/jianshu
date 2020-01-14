@@ -60,6 +60,7 @@ export const SearchWrapper = styled.div`
         height: 30px;
         border-radius: 15px;
         text-align: center;
+        cursor: pointer;
         &.focused {
             color: #fff;
             background: #999;
@@ -134,7 +135,17 @@ export const HotSearchTitle = styled.div`
 export const HotSearchSwitch = styled.div`
     color: #969696;
     float: right;
-    font-szie: 13px;
+    font-szie: 10px;
+    cursor: pointer;
+    .iconspin {
+        display: inline-block;
+        font-size: 12px;
+        margin-right: 2px;
+        transition: all 0.2s;
+        // transform: rotate(0deg);
+        // 设置旋转中心
+        transform-origin: center center;
+    }
 `;
 
 export const HotSearchList = styled.div`

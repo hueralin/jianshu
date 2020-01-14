@@ -1,2 +1,7 @@
 export const SEARCH_FOCUSED = 'header/SEARCH_FOCUSED'
 export const SEARCH_BLUR = 'header/SEARCH_BLUR'
+export const GET_HOTSEARCH_LIST = 'header/GET_HOTSEARCH_LIST'
+export const CHANGE_HOTSEARCHLIST = 'header/CHANGE_HOTSEARCHLIST'
+export const MOUSE_ENTER = 'header/MOUSE_ENTER'
+export const MOUSE_LEAVE = 'header/MOUSE_LEAVE'
+export const PAGE_SWITCH = 'header/PAGE_SWITCH'

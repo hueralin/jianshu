@@ -1,0 +1,37 @@
+{
+    "code": 0,
+    "data": {
+        "list": [
+            {
+                "id": 1,
+                "title": "大千世界",
+                "imgUrl": "https://upload-images.jianshu.io/upload_images/2100084-d293442f1ce81076?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+                "url": "xxxx"
+            },
+            {
+                "id": 2,
+                "title": "大学生活",
+                "imgUrl": "https://upload-images.jianshu.io/upload_images/11692305-1cdf3ef8e7060f59.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+                "url": "xxxx"
+            },
+            {
+                "id": 3,
+                "title": "游戏圈",
+                "imgUrl": "https://upload-images.jianshu.io/upload_images/8511015-5862033ddab1e8fb?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+                "url": "xxxx"
+            },
+            {
+                "id": 4,
+                "title": "cos",
+                "imgUrl": "https://upload-images.jianshu.io/upload_images/14736134-20165acf4467fa8e?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+                "url": "xxxx"
+            },
+            {
+                "id": 5,
+                "title": "文学",
+                "imgUrl": "https://upload-images.jianshu.io/upload_images/4391713-09cdb372e6a38f47?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+                "url": "xxxx"
+            }
+        ]
+    }
+}

@@ -114,6 +114,7 @@ export const HotSearch = styled.div`
     padding: 0 20px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    background: #fff;
     &::before {
         content: '';
         position: absolute;

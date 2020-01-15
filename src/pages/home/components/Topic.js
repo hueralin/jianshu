@@ -1,16 +1,12 @@
 // 专题组件
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { actionCreators } from '../store'
 import {
     TopicWrapper,
     TopicItem
 } from '../style.js'
 
 class Topic extends Component {
-    componentDidMount() {
-        this.props.dispatch(actionCreators.action_getTopics())
-    }
     render() {
         const { topics } = this.props
         return (
@@ -35,10 +31,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        dispatch
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Topic)
+export default connect(mapStateToProps, null)(Topic)

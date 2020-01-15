@@ -17,13 +17,14 @@ export const HomeLeft = styled.div`
     }
 `;
 export const HomeRight = styled.div`
-    width: 240px;
+    width: 280px;
     float: right;
 `;
 export const TopicWrapper = styled.div`
     padding: 20px 0 10px 0;
     overflow: hidden;
     margin-left: -20px;
+    border-bottom: 1px solid #dcdcdc;
 `;
 export const TopicItem = styled.div`
     float: left;
@@ -42,4 +43,44 @@ export const TopicItem = styled.div`
         float: left;
         margin-right: 10px;
     }
+`;
+
+export const ListItem = styled.div`
+    padding: 20px 0;
+    border-bottom: 1px solid #dcdcdc;
+    overflow: hidden;
+    img {
+        float: right;
+        width: 125px;
+        height: 100px;
+        border-radius: 10px;
+    }
+`;
+
+export const ListInfo = styled.div`
+    float: left;
+    width: 500px;
+    h3 {
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: bold;
+        color: #333;
+    }
+    p {
+        font-size: 13px;
+        line-height: 24px;
+        color: #999;
+    }
+`;
+
+export const RecommendWraper = styled.div`
+    width: 280px;
+    margin: 30px 0;
+`;
+
+export const RecommendItem = styled.div`
+    width: 280px;
+    height: 50px;
+    background: url(${(props) => props.imgUrl});
+    background-size: contain;
 `;

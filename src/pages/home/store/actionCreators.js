@@ -89,3 +89,10 @@ export const action_getMoreList = (page) => {
         })
     }
 }
+
+export const action_toggleBackScroll = (showScroll) => {
+    return {
+        type: constants.TOGGLE_BACKSCROLL,
+        showScroll
+    }
+}

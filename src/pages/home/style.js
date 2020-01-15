@@ -96,3 +96,21 @@ export const LoadMore = styled.div`
     margin: 30px 0;
     font-size: 15px;
 `;
+
+export const BackTop = styled.div`
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    cursor: pointer;
+    background: #eee;
+    border-radius: 10px;
+    &:hover {
+        background: #fff;
+    }
+`;

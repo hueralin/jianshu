@@ -8,12 +8,17 @@ import { actionCreators } from './store'
 import {
     HomeWrapper,
     HomeLeft,
-    HomeRight
+    HomeRight,
+    BackTop
 } from './style.js'
 
 class Home extends Component {
     componentDidMount() {
         this.props.GetHomeData()
+        window.addEventListener('scroll', this.props.handleToggleBackScroll)
+    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.props.handleToggleBackScroll)
     }
     render() {
         return (
@@ -27,8 +32,18 @@ class Home extends Component {
                     <Recommend />
                     <Writer />
                 </HomeRight>
+                { this.props.showScroll ? <BackTop onClick={this.handleToTop}>顶部</BackTop> : null }
             </HomeWrapper>
         )
+    }
+    handleToTop() {
+        window.scrollTo(0, 0)
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        showScroll: state.getIn(['home', 'showScroll'])
     }
 }
 
@@ -36,8 +51,15 @@ const mapDispatchToProps = (dispatch) => {
     return {
         GetHomeData() {
             dispatch(actionCreators.action_getHomeData())
+        },
+        handleToggleBackScroll(e) {
+            if(document.documentElement.scrollTop > 400) {
+                dispatch(actionCreators.action_toggleBackScroll(true))
+            } else {
+                dispatch(actionCreators.action_toggleBackScroll(false))
+            }
         }
     }
 }
 
-export default connect(null, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

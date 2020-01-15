@@ -5,7 +5,8 @@ const defaultState = fromJS({
     topics: [],
     articles: [],
     recommends: [],
-    articlePage: 1
+    articlePage: 1,
+    showScroll: false
 })
 
 export default (state = defaultState, action) => {
@@ -27,6 +28,8 @@ export default (state = defaultState, action) => {
                 articles: state.get('articles').concat(action.articles),
                 articlePage: action.articlePage
             })
+        case constants.TOGGLE_BACKSCROLL:
+            return state.set('showScroll', action.showScroll)
         default: return state
     }
 }

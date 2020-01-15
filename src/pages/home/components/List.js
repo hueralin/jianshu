@@ -1,13 +1,15 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import { actionCreators } from '../store'
 import {
     ListItem,
-    ListInfo
+    ListInfo,
+    LoadMore
 } from '../style.js'
 
 class Recommend extends Component {
     render() {
-        const { articles } = this.props
+        const { articles, getMoreList, page } = this.props
         return (
             <Fragment>
             {
@@ -23,6 +25,7 @@ class Recommend extends Component {
                     )
                 })
             }
+            <LoadMore onClick={() => { getMoreList(page) }}>阅读更多</LoadMore>
             </Fragment>
         )
     }
@@ -30,8 +33,17 @@ class Recommend extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        articles: state.getIn(['home', 'articles'])
+        articles: state.getIn(['home', 'articles']),
+        page: state.getIn(['home', 'articlePage'])
     }
 }
 
-export default connect(mapStateToProps, null)(Recommend)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getMoreList(page) {
+            dispatch(actionCreators.action_getMoreList(page))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Recommend)

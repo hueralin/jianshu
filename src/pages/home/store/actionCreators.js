@@ -1,4 +1,5 @@
 import * as constants from './constants'
+import { fromJS } from 'immutable'
 import axios from 'axios'
 
 const getTopics = (data) => {
@@ -28,6 +29,14 @@ const getHomeData = (data) => {
         topics: data.topics,
         articles: data.articles,
         recommends: data.recommends
+    }
+}
+
+const getMoreList = (data, articlePage) => {
+    return {
+        type: constants.GET_MORE_LIST,
+        articles: fromJS(data),
+        articlePage
     }
 }
 
@@ -67,6 +76,16 @@ export const action_getHomeData = () => {
         .then(res => {
             const data = res.data.data
             dispatch(getHomeData(data))
+        })
+    }
+}
+
+export const action_getMoreList = (page) => {
+    return (dispatch) => {
+        axios.get('/api/morearticle.json?page=' + page)
+        .then(res => {
+            const data = res.data.data
+            dispatch(getMoreList(data.list, page+1))
         })
     }
 }

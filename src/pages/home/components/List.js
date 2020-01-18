@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { actionCreators } from '../store'
+import { Link } from 'react-router-dom'
 import {
     ListItem,
     ListInfo,
@@ -15,13 +16,15 @@ class Recommend extends Component {
             {
                 articles.map(item => {
                     return (
-                        <ListItem key={item.get('id')}>
-                            <img src={item.get('imgUrl')} alt=""/>
-                            <ListInfo>
-                                <h3>{item.get('title')}</h3>
-                                <p>{item.get('desc')}</p>
-                            </ListInfo>
-                        </ListItem>
+                        <Link key={item.get('id')} to={'/detail/' + item.get('id')}>
+                            <ListItem>
+                                <img src={item.get('imgUrl')} alt=""/>
+                                <ListInfo>
+                                    <h3>{item.get('title')}</h3>
+                                    <p>{item.get('desc')}</p>
+                                </ListInfo>
+                            </ListItem>
+                        </Link>
                     )
                 })
             }
